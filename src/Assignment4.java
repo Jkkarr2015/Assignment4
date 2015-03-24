@@ -4,6 +4,7 @@
  * @date made 3/24/2015 
  */
 public class Assignment4 {
+    //Test change
     /* Begin hash function one */
     //Hashing Code that was given to me
     public int Hash(String str){
