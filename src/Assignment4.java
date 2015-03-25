@@ -3,7 +3,13 @@
  * @author John Karr
  * @date made 3/24/2015 
  */
+import java.util.Scanner;
+import java.io.*;
 public class Assignment4 {
+    //Attributes
+    public static final int TABLE_SIZE = 57;
+    
+    
     /* Begin hash function one */
     //Hashing Code that was given to me
     public int Hash(String str){
@@ -33,10 +39,12 @@ public class Assignment4 {
     /* Begin function to generate filenames */
     //Code given to me
     public static void fileName(){
-
+        
         int i=1; // file number
 
         String words;
+        
+        
 
         while (i<=10){ // loop will process 10 files
 
@@ -49,15 +57,43 @@ public class Assignment4 {
             System.out.println(filename);
 
             // open the file using 'filename' for reading
+            
 
             // read the file until end is reached
-
+           
             // testing purposes [your parsing and hashing goes here]
-
+            try{
+                 FileInputStream inf = new FileInputStream(new File(filename));
+            
+                //Parser Start
+                char let;
+                String str = "";
+                 int n = 0;
+           
+                while((n = inf.read()) != -1){
+                    let = (char)n;//converts n into Char type
+               
+                    if(Character.isLetter(let))
+                        str += Character.toLowerCase(let);
+               
+                    if((Character.isWhitespace(let) || let == '-') && !str.isEmpty()){
+                  
+                        str = "";//Clears out str for the next word
+                   
+                    }//end if
+                }//while END
+            //Parser end
+           
+            
             i++; // next file
-
-        }
-
+            
+            }//Try End
+            catch(IOException e){
+                e.printStackTrace();
+            }//catch
+        }//While 1 end
+        
+        
     }/* End function to generate filenames */
     //END Code given to me
     
