@@ -1,0 +1,18 @@
+ A tumor is a growth of tissue that forms an abnormal mass. Tumors generally provide no useful function and grow at the expense of healthy tissues.
+In general, tumors appear to be caused by abnormal regulation of cell division. Typically, the division of cells in the body is strictly controlled -- new cells are created to replace older ones or to perform new functions. Cells which are damaged or no longer needed die to make room for healthy replacements.
+
+If the balance of cell division and death is disturbed, a tumor may form. Tumors are classified as either benign (slow-growing and often harmless depending on the location) or malignant (faster-growing and likely to spread to other parts of the body and cause problems). Malignant tumors are what we call cancer.
+
+Abnormalities of the immune system, which usually detects and blocks aberrant growth, can lead to tumors. Other causes include radiation, genetic abnormalities, certain viruses, sunlight, tobacco, benzene, certain poisonous mushrooms, and aflatoxins (a poison produced by an organism which sometimes grows on peanut plants). Tobacco causes more deaths from cancer than any other environmental agent.
+
+Some tumors are more common in one sex than the other, some are more common among children or the elderly, and some vary with diet, environment, and genetic risk factors.
+Like the symptoms, the signs of tumors vary based on their site and type. When a tumor is found, a biopsy is performed to determine if the tumor is benign or malignant. Depending on the location of the tumor, the biopsy may be a simple procedure or a serious operation. Most patients with tumors undergo CT scans or MRI to determine the exact location of the tumor and its extent. More recently, positron emission tomography (PET) scans have been used to visualize tumors.
+
+
+Treatment also varies based on the type of tumor, whether it is benign or malignant, and its location. If the tumor is benign (meaning it has no potential to spread) and is located in a "safe" area where it will not cause symptoms or disturb the proper functioning of the organ, sometimes no treatment is needed. Sometimes benign tumors may be removed for cosmetic reasons, however.
+
+If a tumor is malignant, treatments include surgery, radiation, chemotherapy, or a combination of these methods.
+
+If the cancer is confined to one location, the goal of treatment is usually surgical removal of the tumor and cure. If the tumor has spread to local lymph nodes only, sometimes these can also be removed. If all of the cancer cannot be removed with surgery, the options for treatment include radiation and chemotherapy, or both. Some patients require a combination of surgery, radiation and chemotherapy.
+
+In contrast, lymphoma is usually not treated with surgery and chemotherapy; radiation therapy may be the treatment of choice.
