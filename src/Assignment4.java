@@ -6,10 +6,14 @@
 import java.util.Scanner;
 import java.io.*;
 public class Assignment4 {
+
     //Attributes
     public static final int TABLE_SIZE = 57;
     
     
+
+    //Test change
+
     /* Begin hash function one */
     //Hashing Code that was given to me
     public int Hash(String str){
