@@ -5,14 +5,15 @@
  */
 import java.util.Scanner;
 import java.io.*;
+import java.util.ArrayList;
 public class Assignment4 {
 
     //Attributes
     public static final int TABLE_SIZE = 57;
     
-    
+    ArrayList<Integer[]> hashTable = new ArrayList<>(TABLE_SIZE);
 
-    //Test change
+    
 
     /* Begin hash function one */
     //Hashing Code that was given to me
@@ -45,11 +46,7 @@ public class Assignment4 {
     public static void fileName(){
         
         int i=1; // file number
-
-        String words;
-        
-        
-
+       
         while (i<=10){ // loop will process 10 files
 
             StringBuffer fname = new StringBuffer("file"); // file name begins with this string
@@ -83,11 +80,12 @@ public class Assignment4 {
                     if((Character.isWhitespace(let) || let == '-') && !str.isEmpty()){
                   
                         str = "";//Clears out str for the next word
-                   
+                        
                     }//end if
                 }//while END
             //Parser end
            
+            
             
             i++; // next file
             
