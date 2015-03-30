@@ -101,7 +101,23 @@ public class Assignment4 {
     
     
     public void readSymptoms(){
+        String word;
+        int hashCode;
         
+        File in = new File("symptoms.txt");
+        try{
+            Scanner symptom = new Scanner(in);
+            while(symptom.hasNext()){
+                word = symptom.next();
+                hashCode = Hash(word);
+               
+               
+            }//END While
+            
+        }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
     }//END readSymptom
     
     
