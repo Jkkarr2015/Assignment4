@@ -11,7 +11,7 @@ public class Assignment4 {
     //Attributes
     public static final int TABLE_SIZE = 57;
     
-    ArrayList<Integer[]> hashTable = new ArrayList<>(TABLE_SIZE);
+    ArrayList<Integer[]> hashTable = new ArrayList<>();
 
     
 
@@ -99,5 +99,15 @@ public class Assignment4 {
     }/* End function to generate filenames */
     //END Code given to me
     
+    
+    public void readSymptoms(){
+        
+    }//END readSymptom
+    
+    
+    
+    public static void main(String[] args){
+        
+    }//END MAIN
     
 }//END Main
