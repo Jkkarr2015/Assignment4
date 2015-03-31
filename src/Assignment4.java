@@ -11,7 +11,7 @@ public class Assignment4 {
     //Attributes
     public static final int TABLE_SIZE = 57;
     
-    ArrayList<Integer[]> hashTable = new ArrayList<>();
+    static int hashTable[] = new int[TABLE_SIZE];
     //This Arraylist will probably change to multiple arrays (2 MAX)
     
     
@@ -121,7 +121,7 @@ public class Assignment4 {
         }
     }//END readSymptom
     
-    public void isEmpty(){
+    public void is_Empty(){
         //stub
     }//END isEmpty
     
