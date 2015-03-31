@@ -120,7 +120,25 @@ public class Assignment4 {
         }
     }//END readSymptom
     
+    public void isEmpty(){
+        //stub
+    }//END isEmpty
     
+    public void contains(){
+        //stub
+    }//END Contains
+    
+    public void isFull(){
+        //stub
+    }//END isFull
+    
+    public void get(){
+        //stub
+    }//END get
+    
+    public void insert(){
+        //stub
+    }//END insert
     
     public static void main(String[] args){
         
