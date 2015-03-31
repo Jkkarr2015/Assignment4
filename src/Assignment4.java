@@ -12,7 +12,8 @@ public class Assignment4 {
     public static final int TABLE_SIZE = 57;
     
     ArrayList<Integer[]> hashTable = new ArrayList<>();
-
+    //This Arraylist will probably change to multiple arrays (2 MAX)
+    
     
 
     /* Begin hash function one */
@@ -29,11 +30,11 @@ public class Assignment4 {
 
         {
 
-            val += (int)(str.charAt(i)* Math.pow(37,i));
+            val += (int)(str.charAt(i)* Math.pow(37,i));//Gets unicode for ever letter and takes positon into account
 
         }
 
-        return val%TABLE_SIZE; // TABLE_SIZE is the length of the hash table
+        return val%TABLE_SIZE; // TABLE_SIZE is the length of the hash table // Compresses hashCode
 
     }/* End hash function one */
     //Hashing code END
@@ -110,10 +111,10 @@ public class Assignment4 {
             while(symptom.hasNext()){
                 word = symptom.next();
                 hashCode = Hash(word);
-               
-               
+                //Insert hashTable container here
+                //Insert Linear Probe code here for collision detection 
             }//END While
-            
+          
         }
         catch(FileNotFoundException e){
             e.printStackTrace();
