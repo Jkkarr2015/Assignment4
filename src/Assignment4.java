@@ -11,7 +11,9 @@ public class Assignment4 {
     //Attributes
     public static final int TABLE_SIZE = 57;
     
-    static int hashTable[] = new int[TABLE_SIZE];
+    String symptoms[] = new String[TABLE_SIZE];
+    int[][] pages = new int[TABLE_SIZE][TABLE_SIZE];
+    
     //This Arraylist will probably change to multiple arrays (2 MAX)
     
     
@@ -85,10 +87,7 @@ public class Assignment4 {
                     }//end if
                 }//while END
             //Parser end
-           
-            
-            
-            i++; // next file
+           i++; // next file
             
             }//Try End
             catch(IOException e){
@@ -103,14 +102,27 @@ public class Assignment4 {
     
     public void readSymptoms(){
         String word;
-        int hashCode;
-        
         File in = new File("symptoms.txt");
         try{
             Scanner symptom = new Scanner(in);
             while(symptom.hasNext()){
                 word = symptom.next();
-                hashCode = Hash(word);
+                int i = Hash(word);
+                if(symptoms[i] == null)
+                    symptoms[i] = word;
+                else{//Linear Probing
+                    i++;
+                    if(i < TABLE_SIZE){
+                        symptoms[i] = word;
+                    }//End If
+                    if(i > TABLE_SIZE){
+                        i = 0;
+                        if(symptoms[i] == null){
+                            symptoms[i] = word;
+                        }//END if
+                    }//END IF
+                }//End Else
+                
                 //Insert hashTable container here
                 //Insert Linear Probe code here for collision detection 
             }//END While
@@ -121,28 +133,8 @@ public class Assignment4 {
         }
     }//END readSymptom
     
-    public void is_Empty(){
-        //stub
-    }//END isEmpty
-    
-    public void contains(){
-        //stub
-    }//END Contains
-    
-    public void isFull(){
-        //stub
-    }//END isFull
-    
-    public void get(){
-        //stub
-    }//END get
-    
-    public void insert(){
-        //stub
-    }//END insert
-    
     public static void main(String[] args){
         
     }//END MAIN
     
-}//END Main
+}//END Class
