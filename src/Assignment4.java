@@ -20,9 +20,9 @@ public class Assignment4 {
 
     /* Begin hash function one */
     //Hashing Code that was given to me
-    public int Hash(String str){
+    public long Hash(String str){
 
-        int val = 0;
+        long val = 0;
 
         if(str.isEmpty())
 
@@ -46,11 +46,11 @@ public class Assignment4 {
     
     /* Begin function to generate filenames */
     //Code given to me
-    public static void fileName(){
-        
+    public void fileName(String word){
+        int j = 0;
         int i=1; // file number
        
-        while (i<=10){ // loop will process 10 files
+        while (i<=50){ // loop will process 10 files
 
             StringBuffer fname = new StringBuffer("file"); // file name begins with this string
 
@@ -81,13 +81,22 @@ public class Assignment4 {
                         str += Character.toLowerCase(let);
                
                     if((Character.isWhitespace(let) || let == '-') && !str.isEmpty()){
-                  
+                        if(str.equals(word)){
+                            long k = Hash(word);
+                            int index = (int) k;
+                            pages[j][index] = i;//Columms are HashCode specific
+                            j++;
+                            i++;
+                        }
+                        else{
+                            i++;
+                        }
                         str = "";//Clears out str for the next word
                         
                     }//end if
                 }//while END
             //Parser end
-           i++; // next file
+           
             
             }//Try End
             catch(IOException e){
@@ -107,24 +116,28 @@ public class Assignment4 {
             Scanner symptom = new Scanner(in);
             while(symptom.hasNext()){
                 word = symptom.next();
-                int i = Hash(word);
-                if(symptoms[i] == null)
-                    symptoms[i] = word;
-                else{//Linear Probing
-                    i++;
-                    if(i < TABLE_SIZE){
-                        symptoms[i] = word;
-                    }//End If
-                    if(i > TABLE_SIZE){
-                        i = 0;
-                        if(symptoms[i] == null){
-                            symptoms[i] = word;
-                        }//END if
-                    }//END IF
-                }//End Else
+                long i = Hash(word);
+                //For Loop Linear Probe
+                for(int j =(int)i; j<TABLE_SIZE;j++){
+                    
+                    if(symptoms[j] != null){
+                        if(j < TABLE_SIZE - 1)
+                           j++;
+                    }
+                    if(symptoms[j] == null){
+                        symptoms[j] = word;
+                        j = 60;//Breaks out of loop if it sets word in an index
+                    }
+                        else{
+                                if(j >= TABLE_SIZE - 1){
+                                    j = 0;//Comes back around if all lower indexes are full
+                                }
+                            }
+                }//END For
                 
-                //Insert hashTable container here
-                //Insert Linear Probe code here for collision detection 
+                
+                
+               
             }//END While
           
         }
@@ -134,6 +147,19 @@ public class Assignment4 {
     }//END readSymptom
     
     public static void main(String[] args){
+        Assignment4 obj = new Assignment4();
+        obj.readSymptoms();
+        Scanner input = new Scanner (System.in);
+        System.out.println("Enter symptoms one at a time (type null to start search): ");
+        while(!input.next().equals("null")){
+            String symptom1 = input.next();
+            String con1 = input.next();
+            String symptom2 = input.next();
+            String con2 = input.next();
+            String symptom3 = input.next();
+            String con3 = input.next();
+            String symptom4 = input.next();
+        }
         
     }//END MAIN
     
