@@ -150,16 +150,39 @@ public class Assignment4 {
         Assignment4 obj = new Assignment4();
         obj.readSymptoms();
         Scanner input = new Scanner (System.in);
-        System.out.println("Enter symptoms one at a time (type null to start search): ");
-        while(!input.next().equals("null")){
-            String symptom1 = input.next();
-            String con1 = input.next();
-            String symptom2 = input.next();
-            String con2 = input.next();
-            String symptom3 = input.next();
-            String con3 = input.next();
-            String symptom4 = input.next();
-        }
+        System.out.println("How many symptoms?(Enter 2 through 4: ");
+        int sN = input.nextInt();
+        
+        String symptom1;
+        String con1;
+        String symptom2;
+        String con2;
+        String symptom3;
+        String con3;
+        String symptom4;
+        switch (sN){
+            case 2: symptom1 = input.next();
+                    con1 = input.next();
+                    symptom2 = input.next();
+                    break;
+            case 3: symptom1 = input.next();
+                    con1 = input.next();
+                    symptom2 = input.next();
+                    con2 = input.next();
+                    symptom3 = input.next();
+                    break;
+            case 4: symptom1 = input.next();
+                    con1 = input.next();
+                    symptom2 = input.next();
+                    con2 = input.next();
+                    symptom3 = input.next();
+                    con3 = input.next();
+                    symptom4 = input.next();
+                    break;
+        }//END Switch
+        
+           
+        
         
     }//END MAIN
     
