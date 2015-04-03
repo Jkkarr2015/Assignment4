@@ -58,7 +58,7 @@ public class Assignment4 {
 
             String filename =  fname.toString();
 
-            System.out.println(filename);
+            //System.out.println(filename);
 
             // open the file using 'filename' for reading
             
@@ -88,16 +88,16 @@ public class Assignment4 {
                             j++;
                             i++;
                         }
-                        else{
-                            i++;
-                        }
+                       
                         str = "";//Clears out str for the next word
                         
                     }//end if
+                    
                 }//while END
+                
             //Parser end
            
-            
+            i++;
             }//Try End
             catch(IOException e){
                 e.printStackTrace();
@@ -123,29 +123,85 @@ public class Assignment4 {
                     if(symptoms[j] != null){
                         if(j < TABLE_SIZE - 1)
                            j++;
-                    }
+                    }//ENd if
                     if(symptoms[j] == null){
                         symptoms[j] = word;
                         j = 60;//Breaks out of loop if it sets word in an index
-                    }
+                    }//End If
                         else{
                                 if(j >= TABLE_SIZE - 1){
                                     j = 0;//Comes back around if all lower indexes are full
                                 }
-                            }
+                            }//End Else
                 }//END For
-                
-                
-                
-               
             }//END While
-          
-        }
+          }//END Try
         catch(FileNotFoundException e){
             e.printStackTrace();
-        }
+        }//END Catch
     }//END readSymptom
     
+   public void printAnd2(String symptom1, String symptom2){
+       long i = Hash(symptom1);
+       int index = (int) i;
+       long j = Hash(symptom2);
+       int index2 = (int) j;
+       int M = 0;
+       
+       System.out.print("Pages : ");
+       while(M < TABLE_SIZE){
+            for(int k = 0; k < TABLE_SIZE; k++){
+                if(pages[k][index2] == pages[M][index]){
+                    System.out.print(pages[k][index2] + " , ");
+                }//end if
+                if(pages[k][index2] == 0){
+                    
+                    k = 60;
+                }
+            }//end for
+            if(pages[M][index] == 0 )
+                M = 60;
+            M++;//Next page     
+        }//end while
+   }//END PRINT AND2
+   
+    public void printOr2(String symptom1, String symptom2){
+       long i = Hash(symptom1);
+       int index = (int) i;
+       long j = Hash(symptom2);
+       int index2 = (int) j;
+       int M = 0;
+       
+       System.out.print("Pages : ");
+       while(M < TABLE_SIZE){
+            for(int k = 0; k < TABLE_SIZE; k++){
+                System.out.print(pages[k][index] + pages[k][index2] + " , ");
+                if(pages[k][index] == 0){
+                    System.out.print(pages[k][index2] + " , ");
+                }
+                else{
+                    if(pages[k][index2] == 0){
+                        System.out.print(pages[k][index] + " , ");
+                    }
+                    else{
+                        k = 60;
+                        M = 60;
+                    }
+                }
+            }//end for
+           
+            M++;//Next page     
+        }//end while
+   }//END PRINT Or2
+    
+    public void printPages(){
+        for(int i = 0; i < TABLE_SIZE; i++){
+            for(int j =0; j < TABLE_SIZE; j++){
+                System.out.print(pages[i][j] + " , ");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args){
         Assignment4 obj = new Assignment4();
         obj.readSymptoms();
@@ -160,16 +216,58 @@ public class Assignment4 {
         String symptom3;
         String con3;
         String symptom4;
+        
+        String and = "and";
+        String or = "or";
+        
+        
         switch (sN){
             case 2: symptom1 = input.next();
                     con1 = input.next();
                     symptom2 = input.next();
+                    if(con1.equalsIgnoreCase(and)){
+                        obj.fileName(symptom1);
+                        obj.fileName(symptom2);
+                        //obj.printPages();
+                        obj.printAnd2(symptom1, symptom2);
+                    }//END AND IF
+                    
+                    if(con1.equalsIgnoreCase(or)){
+                        obj.fileName(symptom1);
+                        obj.fileName(symptom2);
+                        obj.printOr2(symptom1, symptom2);
+                    }//OR If
                     break;
             case 3: symptom1 = input.next();
                     con1 = input.next();
                     symptom2 = input.next();
                     con2 = input.next();
                     symptom3 = input.next();
+                    if(con1.equalsIgnoreCase(and)){
+                        obj.fileName(symptom1);
+                        obj.fileName(symptom2);
+                        //obj.printPages();
+                        obj.printAnd2(symptom1, symptom2);
+                    }//END AND IF
+                    
+                    if(con1.equalsIgnoreCase(or)){
+                        obj.fileName(symptom1);
+                        obj.fileName(symptom2);
+                        obj.printOr2(symptom1, symptom2);
+                    }//OR If
+                    
+                    if(con2.equalsIgnoreCase(and)){
+                        obj.fileName(symptom2);
+                        obj.fileName(symptom3);
+                        //obj.printPages();
+                        obj.printAnd2(symptom2, symptom3);
+                    }//END AND IF
+                    
+                    if(con2.equalsIgnoreCase(or)){
+                        obj.fileName(symptom2);
+                        obj.fileName(symptom3);
+                        obj.printOr2(symptom2, symptom3);
+                    }//OR If
                     break;
             case 4: symptom1 = input.next();
                     con1 = input.next();
@@ -178,12 +276,108 @@ public class Assignment4 {
                     symptom3 = input.next();
                     con3 = input.next();
                     symptom4 = input.next();
+                    if(con1.equalsIgnoreCase(and)){
+                        obj.fileName(symptom1);
+                        obj.fileName(symptom2);
+                        //obj.printPages();
+                        obj.printAnd2(symptom1, symptom2);
+                    }//END AND IF
+                    
+                    if(con1.equalsIgnoreCase(or)){
+                        obj.fileName(symptom1);
+                        obj.fileName(symptom2);
+                        obj.printOr2(symptom1, symptom2);
+                    }//OR If
+                    if(con2.equalsIgnoreCase(and)){
+                        obj.fileName(symptom2);
+                        obj.fileName(symptom3);
+                        //obj.printPages();
+                        obj.printAnd2(symptom2, symptom3);
+                    }//END AND IF
+                    
+                    if(con2.equalsIgnoreCase(or)){
+                        obj.fileName(symptom2);
+                        obj.fileName(symptom3);
+                        obj.printOr2(symptom2, symptom3);
+                    }//OR If
+                    if(con3.equalsIgnoreCase(and)){
+                        obj.fileName(symptom3);
+                        obj.fileName(symptom4);
+                        //obj.printPages();
+                        obj.printAnd2(symptom3, symptom4);
+                    }//END AND IF
+                    
+                    if(con3.equalsIgnoreCase(or)){
+                        obj.fileName(symptom3);
+                        obj.fileName(symptom4);
+                        obj.printOr2(symptom3, symptom4);
+                    }//OR If
                     break;
         }//END Switch
         
-           
+    
         
         
     }//END MAIN
     
 }//END Class
+
+
+/*
+run:
+How many symptoms?(Enter 2 through 4: 
+4
+fatigue
+or
+fever
+or
+flu
+or
+rubella
+Pages : 18 , Pages : 21 , Pages : 31 , BUILD SUCCESSFUL (total time: 28 seconds)
+
+run:
+How many symptoms?(Enter 2 through 4: 
+3
+hypothermia
+and
+frostbite
+and
+hemtoma
+Pages : 21 , 22 , 0 , Pages : 0 , BUILD SUCCESSFUL (total time: 45 seconds)
+
+run:
+How many symptoms?(Enter 2 through 4: 
+3
+hemorrhage
+and
+paralysis
+not
+asphyxia
+Pages : 0 , BUILD SUCCESSFUL (total time: 1 minute 1 second)
+
+run:
+How many symptoms?(Enter 2 through 4: 
+3
+hemorrhage
+or
+poisoning
+not
+dengue
+Pages : 37 , BUILD SUCCESSFUL (total time: 42 seconds)
+
+run:
+How many symptoms?(Enter 2 through 4: 
+4
+flu
+and
+cough
+or
+fever
+not
+dengue
+Pages : 19 , 20 , 21 , 0 , Pages : 4 , BUILD SUCCESSFUL (total time: 28 seconds)
+
+
+
+*/
